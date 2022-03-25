@@ -104,7 +104,15 @@ export const genus_traits = {
     },
     avian: {
         hollow_bones: 1,
-        rigid: 1
+        beast: 1,
+        scales: 1,
+        strong: 1,
+        xenophobic:1,
+        detritivore: 1,
+        submerged: 1,
+        immoral: 1,
+        instinct: 1,
+        adaptable: 1
     },
     insectoid: {
         high_pop: 1,
