@@ -27,7 +27,7 @@ export const actions = {
             },
             action(){
                 if(global['resource']['RNA'].amount < global['resource']['RNA'].max){
-                    modRes('RNA',global.race['rapid_mutation'] ? 2 : 99,true);
+                    modRes('RNA',global.race['rapid_mutation'] ? 2 : 1,true);
                 }
                 return false;
             }
@@ -40,7 +40,7 @@ export const actions = {
             action(){
                 if (global['resource']['RNA'].amount >= 2 && global['resource']['DNA'].amount < global['resource']['DNA'].max){
                     modRes('RNA',-2,true);
-                    modRes('DNA',1,true);
+                    modRes('DNA',99,true);
                 }
                 return false;
             },
