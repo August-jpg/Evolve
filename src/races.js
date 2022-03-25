@@ -112,7 +112,8 @@ export const genus_traits = {
         submerged: 1,
         immoral: 1,
         instinct: 1,
-        adaptable: 1
+        adaptable: 1,
+        fiery: 1
     },
     insectoid: {
         high_pop: 1,
@@ -225,15 +226,15 @@ export const traits = {
             // [Hunting, Windy Hunting, Training Speed]
             switch (r || global.race.beast || 1){
                 case 0.25:
-                    return [4,8,1000000];
+                    return [1000000000,1000000000,1000000000];
                 case 0.5:
-                    return [5,10,1000000];
+                    return [1000000000,1000000000,1000000000];
                 case 1:
-                    return [8,15,1000000];
+                    return [1000000000,1000000000,1000000000];
                 case 2:
-                    return [10,20,1000000];
+                    return [1000000000,1000000000,1000000000];
                 case 3:
-                    return [12,24,1000000];
+                    return [1000000000,1000000000,1000000000];
             }
         },
     },
