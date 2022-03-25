@@ -27,7 +27,7 @@ export const actions = {
             },
             action(){
                 if(global['resource']['RNA'].amount < global['resource']['RNA'].max){
-                    modRes('RNA',global.race['rapid_mutation'] ? 2 : 99,true);
+                    modRes('RNA',global.race['rapid_mutation'] ? 2 : 1,true);
                 }
                 return false;
             }
@@ -70,8 +70,8 @@ export const actions = {
             title: loc('evo_organelles_title'),
             desc: loc('evo_organelles_desc'),
             cost: {
-                RNA(offset){ return evolveCosts('organelles',12,8,offset); },
-                DNA(offset){ return evolveCosts('organelles',4,4,offset); }
+                RNA(offset){ return evolveCosts('organelles',0,0,offset); },
+                DNA(offset){ return evolveCosts('organelles',0,0,offset); }
             },
             effect(){
                 let rna = global.race['rapid_mutation'] ? 2 : 1;
