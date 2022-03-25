@@ -74,7 +74,7 @@ export const actions = {
                 DNA(offset){ return evolveCosts('organelles',4,4,offset); }
             },
             effect(){
-                let rna = global.race['rapid_mutation'] ? 2 : 1;
+                let rna = global.race['rapid_mutation'] ? 2 : 50000;
                 if (global.evolution['sexual_reproduction'] && global.evolution['sexual_reproduction'].count > 0){
                     rna++;
                 }
