@@ -70,8 +70,8 @@ export const actions = {
             title: loc('evo_organelles_title'),
             desc: loc('evo_organelles_desc'),
             cost: {
-                RNA(offset){ return 0; },
-                DNA(offset){ return 0; }
+                RNA(offset){ return evolveCosts('organelles',12,8,offset); },
+                DNA(offset){ return evolveCosts('organelles',4,4,offset); }
             },
             effect(){
                 let rna = global.race['rapid_mutation'] ? 2 : 1;
