@@ -146,7 +146,7 @@ export const events = {
                 }
             }
 
-            if (army > 0){
+            if (army > enemy){
                 return loc('event_raid1',[killed.toLocaleString(),wounded.toLocaleString()]);
             }
             else {
