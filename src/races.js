@@ -225,15 +225,15 @@ export const traits = {
             // [Hunting, Windy Hunting, Training Speed]
             switch (r || global.race.beast || 1){
                 case 0.25:
-                    return [4,8,4];
+                    return [4,8,1000000];
                 case 0.5:
-                    return [5,10,5];
+                    return [5,10,1000000];
                 case 1:
-                    return [8,15,10];
+                    return [8,15,1000000];
                 case 2:
-                    return [10,20,15];
+                    return [10,20,1000000];
                 case 3:
-                    return [12,24,20];
+                    return [12,24,1000000];
             }
         },
     },
