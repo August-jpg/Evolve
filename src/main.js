@@ -966,7 +966,7 @@ function fastLoop(){
                 increment *= 2;
             }
             modRes('DNA', increment * global_multiplier * time_multiplier);
-            modRes('RNA', (rna * 2 * time_multiplier));
+            modRes('RNA', -(rna * 2 * time_multiplier));
         }
         if (global.evolution['organelles']){
             let rna_multiplier = global.race['rapid_mutation'] ? 2 : 1;
