@@ -966,14 +966,14 @@ function fastLoop(){
                 increment *= 2;
             }
             modRes('DNA', increment * global_multiplier * time_multiplier);
-            modRes('RNA', -(rna * 2 * time_multiplier));
+            modRes('RNA', (rna * 2 * time_multiplier));
         }
         if (global.evolution['organelles']){
             let rna_multiplier = global.race['rapid_mutation'] ? 2 : 1;
             if (global.evolution['sexual_reproduction'] && global.evolution['sexual_reproduction'].count > 0){
                 rna_multiplier++;
             }
-            modRes('RNA',global.evolution['organelles'].count * rna_multiplier * global_multiplier * time_multiplier * 10);
+            modRes('RNA',global.evolution['organelles'].count * rna_multiplier * global_multiplier * time_multiplier);
         }
 
         if (global.stats.feat['novice'] && global.stats.achieve['apocalypse'] && global.stats.achieve.apocalypse.l > 0 && global.race.universe !== 'bigbang' && (!global.race.seeded || (global.race.seeded && global.race['chose']))){
