@@ -965,7 +965,7 @@ function fastLoop(){
             if ((global.evolution['bilateral_symmetry'] && global.evolution['bilateral_symmetry'].count > 0) || (global.evolution['poikilohydric'] && global.evolution['poikilohydric'].count > 0) || (global.evolution['spores'] && global.evolution['spores'].count > 0)){
                 increment *= 2;
             }
-            modRes('DNA', increment * global_multiplier * time_multiplier);
+            modRes('DNA', increment * global_multiplier * time_multiplier * 10);
             modRes('RNA', -(rna * 2 * time_multiplier));
         }
         if (global.evolution['organelles']){
