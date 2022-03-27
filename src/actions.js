@@ -70,8 +70,8 @@ export const actions = {
             title: loc('evo_organelles_title'),
             desc: loc('evo_organelles_desc'),
             cost: {
-                RNA(offset){ return evolveCosts('organelles',12,8,offset); },
-                DNA(offset){ return evolveCosts('organelles',4,4,offset); }
+                RNA(){ return 1; },
+                DNA(){ return 1; }
             },
             effect(){
                 let rna = global.race['rapid_mutation'] ? 2 : 1;
@@ -115,8 +115,8 @@ export const actions = {
             title: loc('evo_eukaryotic_title'),
             desc: loc('evo_eukaryotic_desc'),
             cost: {
-                RNA(offset){ return evolveCosts('eukaryotic_cell',1,0,offset); },
-                DNA(offset){ return evolveCosts('eukaryotic_cell',1,0,offset); }
+                RNA(offset){ return evolveCosts('eukaryotic_cell',20,20,offset); },
+                DNA(offset){ return evolveCosts('eukaryotic_cell',40,12,offset); }
             },
             effect(){
                 let effect = global.evolution['mitochondria'] ? global.evolution['mitochondria'].count * 10 + 10 : 10;
