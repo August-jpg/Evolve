@@ -2,7 +2,7 @@
 
 ## Play my broken version, if you want
 
-https://august-jpg.github.io/Evolve/
+https://august-jpg.github.io/Evolve-studywork/
 
 ## Play the original game
 
