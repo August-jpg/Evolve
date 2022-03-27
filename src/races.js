@@ -104,16 +104,7 @@ export const genus_traits = {
     },
     avian: {
         hollow_bones: 1,
-        beast: 1,
-        scales: 1,
-        strong: 1,
-        xenophobic:1,
-        detritivore: 1,
-        submerged: 1,
-        immoral: 1,
-        instinct: 1,
-        adaptable: 1,
-        fiery: 1
+        rigid: 1
     },
     insectoid: {
         high_pop: 1,
@@ -226,15 +217,15 @@ export const traits = {
             // [Hunting, Windy Hunting, Training Speed]
             switch (r || global.race.beast || 1){
                 case 0.25:
-                    return [1000000000,1000000000,1000000000];
+                    return [4,8,4];
                 case 0.5:
-                    return [1000000000,1000000000,1000000000];
+                    return [5,10,5];
                 case 1:
-                    return [1000000000,1000000000,1000000000];
+                    return [8,15,10];
                 case 2:
-                    return [1000000000,1000000000,1000000000];
+                    return [10,20,15];
                 case 3:
-                    return [1000000000,1000000000,1000000000];
+                    return [12,24,20];
             }
         },
     },
