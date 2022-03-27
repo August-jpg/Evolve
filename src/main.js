@@ -697,7 +697,7 @@ function fastLoop(){
     const date = new Date();
 
     breakdown.p['Global'] = {};
-    var global_multiplier = 25;
+    var global_multiplier = 1;
     let applyPlasmid = false;
     let pBonus = plasmidBonus('raw');
     if (global.race.Plasmid.count > 0 && ((global.race.universe !== 'antimatter') || (global.genes['bleed'] && global.race.universe === 'antimatter'))){
