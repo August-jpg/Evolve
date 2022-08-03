@@ -4374,7 +4374,7 @@ export const actions = {
                     global['resource']['Knowledge'].max += gain;
                     global.city.library.count++;
                     if (global.tech['science'] && global.tech['science'] >= 3){
-                        global.civic.professor.impact = 1000000000 + (global.city.library.count * 0.01)
+                        global.civic.professor.impact = 0.5 + (global.city.library.count * 0.01)
                     }
                     return true;
                 }
