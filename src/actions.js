@@ -70,7 +70,7 @@ export const actions = {
             title: loc('evo_organelles_title'),
             desc: loc('evo_organelles_desc'),
             cost: {
-                RNA(offset){ return evolveCosts('organelles',12,8,offset); },
+                RNA(offset){ return evolveCosts('organelles',1,8,offset); },
                 DNA(offset){ return evolveCosts('organelles',4,4,offset); }
             },
             effect(){
