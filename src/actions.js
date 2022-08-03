@@ -4223,9 +4223,9 @@ export const actions = {
             reqs: { science: 1 },
             not_trait: ['cataclysm'],
             cost: {
-                Money(offset){ return costMultiplier('university', offset, 900, 1.5) - 500; },
-                Lumber(offset){ return costMultiplier('university', offset, 500, 1.36) - 200; },
-                Stone(offset){ return costMultiplier('university', offset, 750, 1.36) - 350; },
+                Money(offset){ return costMultiplier('university', offset, 1, 1) - 500; },
+                Lumber(offset){ return costMultiplier('university', offset, 1, 1) - 200; },
+                Stone(offset){ return costMultiplier('university', offset, 1, 1) - 350; },
                 Crystal(offset){ return global.race.universe === 'magic' ? costMultiplier('university', offset, 5, 1.36) : 0; },
                 Iron(offset){ return ((global.city['university'] ? global.city.university.count : 0) + (offset || 0)) >= 3 && global.city.ptrait.includes('unstable') ? costMultiplier('university', offset, 25, 1.36) : 0; }
             },
