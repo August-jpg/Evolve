@@ -2047,7 +2047,7 @@ export const actions = {
                 return false;
             },
             val(spend){
-                let gain = global.race['strong'] ? traits.strong.vars()[0] : 1;
+                let gain = global.race['strong'] ? traits.strong.vars()[0] : 100;
                 if (global.genes['enhance']){
                     gain *= 2;
                 }
@@ -2098,7 +2098,7 @@ export const actions = {
                 return false;
             },
             val(spend){
-                let gain = global.race['strong'] ? traits.strong.vars()[0] : 1;
+                let gain = global.race['strong'] ? traits.strong.vars()[0] : 100;
                 if (global.genes['enhance']){
                     gain *= 2;
                 }
@@ -2147,7 +2147,7 @@ export const actions = {
                 return false;
             },
             val(spend){
-                let gain = global.race['strong'] ? traits.strong.vars()[0] : 1;
+                let gain = global.race['strong'] ? traits.strong.vars()[0] : 100;
                 if (global.genes['enhance']){
                     gain *= 2;
                 }
@@ -2451,8 +2451,8 @@ export const actions = {
                     }
                 },
                 Lumber(offset){ return global.race['kindling_kindred'] || global.race['smoldering'] ? 0 : costMultiplier('basic_housing', offset, 10, 1.23); },
-                Stone(offset){ return global.race['kindling_kindred'] ? costMultiplier('basic_housing', offset, 10, 1.23) : 0; },
-                Chrysotile(offset){ return global.race['smoldering'] ? costMultiplier('basic_housing', offset, 10, 1.23) : 0; },
+                Stone(offset){ return global.race['kindling_kindred'] ? costMultiplier('basic_housing', offset, 1, 1.) : 0; },
+                Chrysotile(offset){ return global.race['smoldering'] ? costMultiplier('basic_housing', offset, 1, 1.) : 0; },
                 Horseshoe(){ return global.race['hooved'] ? 1 : 0; }
             },
             effect(){
