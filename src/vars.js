@@ -976,8 +976,21 @@ if (convertVersion(global['version']) < 102012){
     }
 }
 
-global['version'] = '1.2.12';
-global['revision'] = 'c';
+if (convertVersion(global['version']) < 102015){
+    if (global.race.hasOwnProperty('governor') && global.race.governor.hasOwnProperty('tasks')){
+        for (let task in global.race.governor.tasks) {
+            if (global.race.governor.tasks[task] === 'asssemble'){
+                global.race.governor.tasks[task] = 'assemble';
+            }
+        }
+    }
+    if (global['settings'] && global.settings.hasOwnProperty('restoreCheck')){
+        delete global.settings['restoreCheck'];
+    }
+}
+
+global['version'] = '1.2.16';
+global['revision'] = 'a';
 delete global['beta'];
 
 if (!global.hasOwnProperty('power')){
@@ -1452,8 +1465,14 @@ if (!global.stats['ascend']){
 if (!global.stats['descend']){
     global.stats['descend'] = 0;
 }
+if (!global.stats['terraform']){
+    global.stats['terraform'] = 0;
+}
 if (!global.stats['aiappoc']){
     global.stats['aiappoc'] = 0;
+}
+if (!global.stats['geck']){
+    global.stats['geck'] = 0;
 }
 if (!global.stats['dark']){
     global.stats['dark'] = 0;
@@ -1579,6 +1598,13 @@ if (!global.civic['govern']){
     };
 }
 global.civic.govern.fr = 0;
+
+if (!global.hasOwnProperty('custom')){
+    global['custom'] = {};
+}
+if (global.custom.hasOwnProperty('planet') && global.custom.planet.hasOwnProperty('biome')){
+    delete global.custom.planet;
+}
 
 if (global.city.hasOwnProperty('smelter') && !global.city.smelter.hasOwnProperty('cap')){
     global.city.smelter['cap'] = 0;
@@ -1905,10 +1931,6 @@ if (global['arpa'] && global.arpa['launch_facility'] && global.arpa.launch_facil
     global.tech['space'] = 1;
 }
 
-if (!(save.getItem('evolveBak'))){
-    save.setItem('evolveBak',LZString.compressToUTF16(JSON.stringify(global)));
-}
-
 function newGameData(){
     global['race'] = { species : 'protoplasm', gods: 'none', old_gods: 'none', seeded: false };
     Math.seed = Math.rand(0,10000);
@@ -2067,6 +2089,11 @@ window.soft_reset = function reset(){
     clearSavedMessages();
 
     let srace = global.race.hasOwnProperty('srace') ? global.race.srace : false;
+    let gecks = global.race.hasOwnProperty('geck') ? global.race.geck : 0;
+    if (global.race.hasOwnProperty('gecked')){
+        gecks += global.race.gecked;
+        global.stats.geck -= global.race.gecked;
+    }
     let replace = {
         species : 'protoplasm',
         Plasmid: { count: global.race.Plasmid.count },
@@ -2080,6 +2107,10 @@ window.soft_reset = function reset(){
         probes: global.race.probes,
         seed: global.race.seed,
         ascended: global.race.hasOwnProperty('ascended') ? global.race.ascended : false,
+        rejuvenated: global.race.hasOwnProperty('rejuvenated') ? global.race.ascended : false,
+    }
+    if (gecks > 0){
+        replace['geck'] = gecks;
     }
     if (srace){
         replace['srace'] = srace;
