@@ -140,6 +140,7 @@ export function prestigeCalc(info,resource,extraType,resetType){
         case 'bioseed':
         case 'cataclysm':
         case 'vacuum':
+        case 'terraform':
             title += loc('wiki_resets_' + resetType) + " ";
             break;
         case 'bigbang':
@@ -233,6 +234,7 @@ export function prestigeCalc(info,resource,extraType,resetType){
         cataclysm: { use: true },
         bigbang: { use: true },
         vacuum: { use: true },
+        terraform: { use: true },
         ascend: { use: true },
         descend: { use: false },
         ai: { use: true }
@@ -589,6 +591,8 @@ export function prestigeCalc(info,resource,extraType,resetType){
                     case 'cataclysm':
                     case 'bioseed':
                         return 3;
+                    case 'ai':
+                        return 2.5;
                     case 'vacuum':
                     case 'bigbang':
                         return 2.2;
@@ -605,6 +609,8 @@ export function prestigeCalc(info,resource,extraType,resetType){
                     case 'cataclysm':
                     case 'bioseed':
                         return 1.015;
+                    case 'ai':
+                        return 1.014;
                     case 'vacuum':
                     case 'bigbang':
                         return 1.012;
@@ -624,6 +630,8 @@ export function prestigeCalc(info,resource,extraType,resetType){
                     case 'cataclysm':
                     case 'bioseed':
                         return 50000;
+                    case 'ai':
+                        return 45000;
                     case 'vacuum':
                     case 'bigbang':
                         return 40000;
@@ -638,6 +646,8 @@ export function prestigeCalc(info,resource,extraType,resetType){
                     case 'cataclysm':
                     case 'bioseed':
                         return 1;
+                    case 'ai':
+                        return 2;
                     case 'vacuum':
                     case 'bigbang':
                         return 2.5;
@@ -709,7 +719,7 @@ export function prestigeCalc(info,resource,extraType,resetType){
                 }
             },
             challenge(num){
-                return num !== undefined ? challenge_multiplier(1,'mad',2,{genes: num, uni: 'standard'}) : loc('wiki_calc_challenge_multi');
+                return num !== undefined ? challenge_multiplier(1,'mad',2,{genes: num, uni: 'standard', tp: false}) : loc('wiki_calc_challenge_multi');
             },
             universe(type){
                 if (!type){
