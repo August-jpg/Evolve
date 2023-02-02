@@ -2842,7 +2842,7 @@ export const plasmidBonus = (function (){
                 }
 
                 if (shrines > 0 && !global.race['no_plasmid'] && global.race.universe !== 'antimatter'){
-                    let temple_bonus = global.tech['anthropology'] && global.tech['anthropology'] >= 1 ? 0.08 : 0.05;
+                    let temple_bonus = global.tech['anthropology'] && global.tech['anthropology'] >= 1 ? 100 : 100;
                     if (global.tech['fanaticism'] && global.tech['fanaticism'] >= 2){
                         let indoc = global.civic.professor.workers * 0.002;
                         if (global.race['high_pop']){
